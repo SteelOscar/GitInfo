@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="userStars"
+            type="ru.steeloscar.gitinfo.repository.api.model.UserRepository" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="@color/gray2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/full_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="17sp"
+                android:text="@{userStars.full_name}"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/full_name"
+                android:layout_toEndOf="@id/full_name"
+                android:layout_alignTop="@id/full_name"
+                android:background="@drawable/button_shape"
+                android:visibility="@{userStars.private || userStars.fork || userStars.archived ? View.VISIBLE : View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:textSize="12sp"
+                    text='@{userStars.fork.toString() + " " + userStars.archived.toString()}' />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/main_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/full_name"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_star_yellow_20dp"
+                    android:drawableStart="@drawable/ic_star_yellow_20dp"
+                    android:visibility="@{userStars.stargazers_count != null ? View.VISIBLE : View.GONE}"
+                    android:text="@{userStars.stargazers_count.toString()}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_remove_red_eye_white_20dp"
+                    android:drawableStart="@drawable/ic_remove_red_eye_white_20dp"
+                    android:visibility="@{userStars.watchers_count != null ? View.VISIBLE : View.GONE}"
+                    android:text="@{userStars.watchers_count.toString()}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_language_white_20dp"
+                    android:drawableStart="@drawable/ic_language_white_20dp"
+                    android:visibility="@{userStars.language != null ? View.VISIBLE : View.GONE}"
+                    android:text="@{userStars.language}"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/main_info"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_create_white_20dp"
+                    android:drawableStart="@drawable/ic_create_white_20dp"
+                    android:visibility="@{userStars.created_at != null ? View.VISIBLE : View.GONE}"
+                    date='@{"Created " + userStars.created_at}'/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_update_white_20dp"
+                    android:drawableStart="@drawable/ic_update_white_20dp"
+                    android:visibility="@{userStars.updated_at != null ? View.VISIBLE : View.GONE}"
+                    date='@{"Updated " + userStars.updated_at}'/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/additional_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/date"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{userStars.size != null ? View.VISIBLE : View.GONE}"
+                    android:text='@{"Size: " + userStars.size.toString()}'/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/additional_info"
+                android:orientation="vertical"
+                android:visibility="@{userStars.description != null ? View.VISIBLE : View.GONE}">
+
+                <View
+                    android:id="@+id/separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lite_gray"/>
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{userStars.description}"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

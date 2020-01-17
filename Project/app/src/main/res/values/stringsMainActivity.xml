@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_out">Sign Out</string>
+    <string name="git_hub">powered by GitHub API</string>
+
+    <!--    OverviewFragment-->
+    <string name="public_repo">Public repositories:</string>
+    <string name="total_private_repo">Total private repositories:</string>
+    <string name="owned_private_repo">Owned private repositories:</string>
+    <string name="public_gists">Public gists:</string>
+    <string name="private_gists">Private gists:</string>
+    <string name="followers">Followers:</string>
+    <string name="following">Following:</string>
+    <string name="additional_info">Additional information:</string>
+    <string name="disk_usage">Disk Usage</string>
+    <string name="two_factor_auth">Two factor authentication</string>
+
+    <!--    RepositoriesFragment-->
+    <string name="private_repo">Private</string>
+    <string name="fork_repo">Fork</string>
+    <string name="archived_repo">Archived</string>
+    <string name="commits">Commits:</string>
+    <string name="show_commits">Show commits</string>
+    <string name="hide_commits">Hide commits</string>
+
+    <!--    FollowersFragment-->
+    <string name="emptyFollowersMessage">You don\'t have any followers yet.</string>
+    <string name="emptyFollowingMessage">You aren\’t following anybody.</string>
+    <string name="emptyStarsMessage">You don\'t have any starred repositories yet.</string>
+    <string name="emptyRepositoriesMessage">You don\'t have any repositories yet.</string>
+</resources>

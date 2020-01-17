@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="userProfile"
+            type="ru.steeloscar.gitinfo.repository.api.model.UserProfile" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/gray2">
+
+        <LinearLayout
+            android:id="@+id/user_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="100"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/user_image"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="45"
+                app:cardCornerRadius="7dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    loadImage="@{userProfile.avatar_url}"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="55"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:visibility="@{userProfile.name == null ? View.GONE : View.VISIBLE}"
+                    android:text="@{userProfile.name}"/>
+
+                <TextView
+                    android:id="@+id/user_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="@{userProfile.login == null ? View.GONE : View.VISIBLE}"
+                    android:text="@{userProfile.login}"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lite_gray"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:id="@+id/user_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_email_white_20dp"
+                    android:drawableStart="@drawable/ic_email_white_20dp"
+                    android:visibility="@{userProfile.email == null ? View.GONE : View.VISIBLE}"
+                    android:text="@{userProfile.email}"/>
+
+                <TextView
+                    android:id="@+id/user_blog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_public_white_20dp"
+                    android:drawableStart="@drawable/ic_public_white_20dp"
+                    android:visibility="@{userProfile.blog.empty ? View.GONE : View.VISIBLE}"
+                    android:text="@{userProfile.blog}"/>
+
+                <TextView
+                    android:id="@+id/user_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_people_white_20dp"
+                    android:drawableStart="@drawable/ic_people_white_20dp"
+                    android:visibility="@{userProfile.company == null ? View.GONE : View.VISIBLE}"
+                    android:text="@{userProfile.company}"/>
+
+                <TextView
+                    android:id="@+id/user_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_location_on_white_20dp"
+                    android:drawableStart="@drawable/ic_location_on_white_20dp"
+                    android:visibility="@{userProfile.location == null ? View.GONE : View.VISIBLE}"
+                    android:text="@{userProfile.location}"/>
+
+                <TextView
+                    android:id="@+id/user_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_update_white_20dp"
+                    android:drawableStart="@drawable/ic_update_white_20dp"
+                    android:visibility="@{userProfile.updated_at == null ? View.GONE : View.VISIBLE}"
+                    date='@{"Updated " + userProfile.updated_at}'/>
+
+                <TextView
+                    android:id="@+id/user_joined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_create_white_20dp"
+                    android:drawableStart="@drawable/ic_create_white_20dp"
+                    android:visibility="@{userProfile.created_at == null ? View.GONE : View.VISIBLE}"
+                    date='@{"Created " + userProfile.created_at}'/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/user_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/user_info"
+            android:visibility="@{userProfile.bio == null ? View.GONE : View.VISIBLE}"
+            android:text="@{userProfile.bio}"/>
+
+    </RelativeLayout>
+
+</layout>

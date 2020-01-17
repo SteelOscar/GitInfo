@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="button_login">Войти</string>
+    <string name="edit_login">Логин</string>
+    <string name="powered">powered by GitHub API</string>
+</resources>

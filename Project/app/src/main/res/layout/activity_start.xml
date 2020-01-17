@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.StartActivity">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="ru.steeloscar.gitinfo.viewModel.StartViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.startActivityVisibility ? View.VISIBLE : View.GONE}"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/git_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/git_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="150dp"/>
+
+            <EditText
+                android:id="@+id/login_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/git_icon"
+                android:hint="@string/edit_login"
+                android:background="@color/gray"
+                android:textColorHint="@color/lite_gray"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:theme="@style/StartEditText"
+                textListener="@{viewModel.loginTextWatcher}"/>
+
+            <RelativeLayout
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/button_shape"
+                android:layout_below="@id/login_edit">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/button_login"
+                    android:background="@android:color/transparent"
+                    android:textAllCaps="false"
+                    android:visibility="@{viewModel.progressVisibility ? View.GONE : View.VISIBLE}"
+                    android:onClick="@{() -> viewModel.authorizeUser()}"/>
+
+                <ProgressBar
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:visibility="@{viewModel.progressVisibility ? View.VISIBLE : View.GONE}"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/powered"
+                android:textColor="@color/lite_gray" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>
+

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="userRepository"
+            type="ru.steeloscar.gitinfo.repository.api.model.UserRepository" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="@color/gray2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/full_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="17sp"
+                android:text="@{userRepository.full_name}"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shape"
+                android:layout_toRightOf="@id/full_name"
+                android:layout_toEndOf="@id/full_name"
+                android:layout_alignTop="@id/full_name"
+                android:visibility="@{userRepository.private || userRepository.fork || userRepository.archived ? View.VISIBLE : View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:textSize="12sp"
+                    text='@{userRepository.fork.toString() + " " + userRepository.archived.toString()}' />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/main_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/full_name"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_star_yellow_20dp"
+                    android:drawableStart="@drawable/ic_star_yellow_20dp"
+                    android:visibility="@{userRepository.stargazers_count != null ? View.VISIBLE : View.GONE}"
+                    android:text="@{userRepository.stargazers_count.toString()}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_remove_red_eye_white_20dp"
+                    android:drawableStart="@drawable/ic_remove_red_eye_white_20dp"
+                    android:visibility="@{userRepository.watchers_count != null ? View.VISIBLE : View.GONE}"
+                    android:text="@{userRepository.watchers_count.toString()}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_language_white_20dp"
+                    android:drawableStart="@drawable/ic_language_white_20dp"
+                    android:visibility="@{userRepository.language != null ? View.VISIBLE : View.GONE}"
+                    android:text="@{userRepository.language}"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/main_info"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_create_white_20dp"
+                    android:drawableStart="@drawable/ic_create_white_20dp"
+                    android:visibility="@{userRepository.created_at != null ? View.VISIBLE : View.GONE}"
+                    date='@{"Created " + userRepository.created_at}'/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_update_white_20dp"
+                    android:drawableStart="@drawable/ic_update_white_20dp"
+                    android:visibility="@{userRepository.updated_at != null ? View.VISIBLE : View.GONE}"
+                    date='@{"Updated " + userRepository.updated_at}'/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/additional_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/date"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{userRepository.size != null ? View.VISIBLE : View.GONE}"
+                    android:text='@{"Size: " + userRepository.size.toString()}'/>
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/commits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/additional_info">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{!userRepository.commitsEmpty ? View.VISIBLE : View.GONE}">
+
+                    <Button
+                        android:id="@+id/commits_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/button_shape"
+                        android:textColor="@color/black"
+                        android:onClick="@{() -> userRepository.setVisibilityCommits()}"
+                        commitsButtonText="@{userRepository.visibilityCommits}"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/commits_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{userRepository.visibilityCommits ? View.VISIBLE : View.GONE}"/>
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="@{userRepository.visibilityProgressCommits ? View.VISIBLE : View.GONE}"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/commits"
+                android:visibility="@{userRepository.description != null ? View.VISIBLE : View.GONE}"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/lite_gray"/>
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{userRepository.description}"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

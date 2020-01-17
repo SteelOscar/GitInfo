@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="androidx.databinding.ObservableArrayList"/>
+
+        <variable
+            name="viewModel"
+            type="ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.RepositoriesViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        tools:context=".view.mainActivity.mainFragments.RepositoriesFragment">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_repositories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            isRefreshingSwipeRefreshLayout="@{viewModel.refreshingRepositories}">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:visibility="@{viewModel.visibilityEmptyFormRepositories ? View.VISIBLE : View.GONE}">
+
+                    <ImageView
+                        android:id="@+id/empty_repositories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_folder_open_white_60dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/empty_repositories"
+                        android:textAlignment="center"
+                        android:text="@string/emptyRepositoriesMessage"/>
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.visibilityRepositoriesData ? View.VISIBLE : View.GONE}"/>
+
+            </RelativeLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.visibilityRepositoriesProgressBar ? View.VISIBLE : View.GONE}"/>
+
+    </RelativeLayout>
+
+</layout>
