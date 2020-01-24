@@ -1,4 +1,4 @@
-package ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel
+package ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -6,11 +6,11 @@ import androidx.databinding.library.baseAdapters.BR
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import ru.steeloscar.gitinfo.interfaces.fragmentsInterface.StarsInterface
-import ru.steeloscar.gitinfo.repository.MainRepository
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
+import ru.steeloscar.gitinfo.repository.Repository
 import ru.steeloscar.gitinfo.view.mainActivity.adapters.StarsRecyclerAdapter
 
-class StarsViewModel private constructor(private val fragmentInterface: StarsInterface.View): StarsInterface.ViewModel, BaseObservable() {
+class StarsViewModel private constructor(private val fragmentInterface: MainActivityViewInterface.Stars): BaseObservable() {
 
     var visibilityStarsData = false
         @Bindable get
@@ -40,10 +40,10 @@ class StarsViewModel private constructor(private val fragmentInterface: StarsInt
             notifyPropertyChanged(BR.visibilityEmptyFormStars)
         }
 
-    private val repository = MainRepository.getInstance()
+    private val repository = Repository.getInstance()
     private val disposable = CompositeDisposable()
 
-    override fun getStars() {
+    fun getStars() {
         disposable.add(repository.getStars()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -65,7 +65,7 @@ class StarsViewModel private constructor(private val fragmentInterface: StarsInt
         )
     }
 
-    override fun onDestroy() {
+    fun onDestroy() {
         disposable.clear()
     }
 
@@ -73,7 +73,7 @@ class StarsViewModel private constructor(private val fragmentInterface: StarsInt
         private var instance: StarsViewModel? = null
         var firstInstance = true
 
-        fun getInstance(fragmentInterface: StarsInterface.View): StarsViewModel {
+        fun getInstance(fragmentInterface: MainActivityViewInterface.Stars): StarsViewModel {
             if (instance == null) {
                 instance = StarsViewModel(fragmentInterface)
                 return instance as StarsViewModel

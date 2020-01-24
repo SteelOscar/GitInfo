@@ -4,8 +4,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.fragment.app.FragmentStatePagerAdapter
-import ru.steeloscar.gitinfo.view.mainActivity.mainFragments.*
+import ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments.*
 
 class MainViewPagerAdapter(fm: FragmentManager, behavior: Int) : FragmentPagerAdapter(fm, behavior) {
 
@@ -30,7 +29,7 @@ class MainViewPagerAdapter(fm: FragmentManager, behavior: Int) : FragmentPagerAd
 
     override fun getPageTitle(position: Int): CharSequence? = titleFragmentList[position]
 
-    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-        //Do nothing so that ViewPager don't destroy fragments instance
-    }
+//    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+//        //Do nothing so that ViewPager don't destroy fragments instance
+//    }
 }

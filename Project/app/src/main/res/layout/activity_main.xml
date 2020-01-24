@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.mainActivity.MainActivity">
 
     <data>
@@ -40,7 +40,6 @@
 
             </RelativeLayout>
 
-
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 setupWithViewPager="@{viewpager}"
@@ -58,7 +57,7 @@
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

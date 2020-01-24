@@ -8,14 +8,14 @@
 
         <variable
             name="viewModel"
-            type="ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.FollowingViewModel" />
+            type="ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.FollowingViewModel" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/gray"
-        tools:context=".view.mainActivity.mainFragments.FollowingFragment">
+        tools:context=".view.mainActivity.viewPagerFragments.FollowingFragment">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_following"

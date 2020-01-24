@@ -9,14 +9,14 @@
 
         <variable
             name="viewModel"
-            type="ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.RepositoriesViewModel" />
+            type="ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.RepositoriesViewModel" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/gray"
-        tools:context=".view.mainActivity.mainFragments.RepositoriesFragment">
+        tools:context=".view.mainActivity.viewPagerFragments.RepositoriesFragment">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_repositories"

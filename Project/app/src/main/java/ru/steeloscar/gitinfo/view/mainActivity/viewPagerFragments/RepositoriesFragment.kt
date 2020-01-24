@@ -1,4 +1,4 @@
-package ru.steeloscar.gitinfo.view.mainActivity.mainFragments
+package ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments
 
 import android.content.Context
 import android.os.Bundle
@@ -8,17 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import ru.steeloscar.gitinfo.R
-import ru.steeloscar.gitinfo.interfaces.fragmentsInterface.RepositoriesInterface
 import ru.steeloscar.gitinfo.databinding.FragmentRepositoriesBinding
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
 import ru.steeloscar.gitinfo.repository.api.model.UserRepository
-import ru.steeloscar.gitinfo.view.mainActivity.adapters.CommitsLayoutManager
 import ru.steeloscar.gitinfo.view.mainActivity.adapters.RepositoriesRecyclerAdapter
-import ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.RepositoriesViewModel
+import ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.RepositoriesViewModel
 
-class RepositoriesFragment: Fragment(), RepositoriesInterface.View {
+class RepositoriesFragment: Fragment(), MainActivityViewInterface.Repositories{
 
     private lateinit var binding: FragmentRepositoriesBinding
     private var repositoriesViewModel: RepositoriesViewModel = RepositoriesViewModel.getInstance(this)

@@ -1,4 +1,4 @@
-package ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel
+package ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -6,11 +6,11 @@ import androidx.databinding.library.baseAdapters.BR
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import ru.steeloscar.gitinfo.interfaces.fragmentsInterface.FollowingInterface
-import ru.steeloscar.gitinfo.repository.MainRepository
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
+import ru.steeloscar.gitinfo.repository.Repository
 import ru.steeloscar.gitinfo.repository.api.model.UserProfile
 
-class FollowingViewModel private constructor(private val fragmentInterface: FollowingInterface.View) : FollowingInterface.ViewModel, BaseObservable() {
+class FollowingViewModel private constructor(private val fragmentInterface: MainActivityViewInterface.Following): BaseObservable() {
 
     private var count = 0
 
@@ -42,10 +42,10 @@ class FollowingViewModel private constructor(private val fragmentInterface: Foll
             notifyPropertyChanged(BR.visibilityEmptyFormFollowing)
         }
 
-    private val repository = MainRepository.getInstance()
+    private val repository = Repository.getInstance()
     private val disposable = CompositeDisposable()
 
-    override fun getFollowingUsers() {
+    fun getFollowingUsers() {
         disposable.add(repository.getFollowingUsers()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -67,7 +67,7 @@ class FollowingViewModel private constructor(private val fragmentInterface: Foll
         )
     }
 
-    override fun onDestroy() {
+    fun onDestroy() {
         disposable.clear()
     }
 
@@ -95,8 +95,7 @@ class FollowingViewModel private constructor(private val fragmentInterface: Foll
         private var instance: FollowingViewModel? = null
         var firstInstance = true
 
-
-        fun getInstance(fragmentInterface: FollowingInterface.View): FollowingViewModel {
+        fun getInstance(fragmentInterface: MainActivityViewInterface.Following): FollowingViewModel {
             if (instance == null) {
                 instance = FollowingViewModel(fragmentInterface)
                 return instance as FollowingViewModel

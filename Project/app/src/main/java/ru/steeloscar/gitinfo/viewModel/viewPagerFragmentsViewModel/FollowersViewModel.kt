@@ -1,4 +1,4 @@
-package ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel
+package ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -6,12 +6,12 @@ import androidx.databinding.library.baseAdapters.BR
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import ru.steeloscar.gitinfo.interfaces.fragmentsInterface.FollowersInterface
-import ru.steeloscar.gitinfo.repository.MainRepository
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
+import ru.steeloscar.gitinfo.repository.Repository
 import ru.steeloscar.gitinfo.repository.api.model.UserProfile
 import ru.steeloscar.gitinfo.view.mainActivity.adapters.FollowRecyclerAdapter
 
-class FollowersViewModel private constructor(private val fragmentInterface: FollowersInterface.View): FollowersInterface.ViewModel, BaseObservable() {
+class FollowersViewModel private constructor(private val fragmentInterface: MainActivityViewInterface.Followers): BaseObservable() {
 
     private var count = 0
 
@@ -43,10 +43,10 @@ class FollowersViewModel private constructor(private val fragmentInterface: Foll
             notifyPropertyChanged(BR.visibilityEmptyFormFollowers)
         }
 
-    private val repository = MainRepository.getInstance()
+    private val repository = Repository.getInstance()
     private val disposable = CompositeDisposable()
 
-    override fun getFollowers() {
+    fun getFollowers() {
         disposable.add(repository.getFollowers()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -68,7 +68,7 @@ class FollowersViewModel private constructor(private val fragmentInterface: Foll
         )
     }
 
-    override fun onDestroy() {
+    fun onDestroy() {
         disposable.clear()
     }
 
@@ -96,7 +96,7 @@ class FollowersViewModel private constructor(private val fragmentInterface: Foll
         private var instance: FollowersViewModel? = null
         var firstInstance = true
 
-        fun getInstance(fragmentInterface: FollowersInterface.View): FollowersViewModel {
+        fun getInstance(fragmentInterface: MainActivityViewInterface.Followers): FollowersViewModel {
             if (instance == null) {
                 instance = FollowersViewModel(fragmentInterface)
                 return instance as FollowersViewModel

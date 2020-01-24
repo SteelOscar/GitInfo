@@ -8,14 +8,14 @@
 
         <variable
             name="viewModel"
-            type="ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.StarsViewModel" />
+            type="ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.StarsViewModel" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/gray"
-        tools:context=".view.mainActivity.mainFragments.StarsFragment">
+        tools:context=".view.mainActivity.viewPagerFragments.StarsFragment">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_stars"

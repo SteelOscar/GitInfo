@@ -8,16 +8,18 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentPagerAdapter
 import ru.steeloscar.gitinfo.R
-import ru.steeloscar.gitinfo.interfaces.MainActivityInterface
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
 import ru.steeloscar.gitinfo.databinding.ActivityMainBinding
+import ru.steeloscar.gitinfo.view.EditProfileActivity
 import ru.steeloscar.gitinfo.view.StartActivity
 import ru.steeloscar.gitinfo.view.mainActivity.adapters.MainViewPagerAdapter
 import ru.steeloscar.gitinfo.viewModel.MainViewModel
 
-class MainActivity : AppCompatActivity(), MainActivityInterface.View {
+class MainActivity : AppCompatActivity(), MainActivityViewInterface.MainView {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
@@ -26,15 +28,17 @@ class MainActivity : AppCompatActivity(), MainActivityInterface.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        viewModel  = MainViewModel()
         binding =
-            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-
-        binding.toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_person_white_40dp)
+            DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.toolbar.navigationIcon =
+            ContextCompat.getDrawable(this, R.drawable.ic_person_white_40dp)
         setSupportActionBar(binding.toolbar)
+        binding.toolbar.setNavigationOnClickListener {
+            val intent = Intent(this, EditProfileActivity::class.java)
+            startActivity(intent)
+        }
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        viewModel = MainViewModel(this)
-
         binding.viewpager.adapter =
             MainViewPagerAdapter(
                 supportFragmentManager,
@@ -59,7 +63,7 @@ class MainActivity : AppCompatActivity(), MainActivityInterface.View {
         getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        menuInflater.inflate(R.menu.main_toolbar_menu, menu)
         return true
     }
 
@@ -67,7 +71,9 @@ class MainActivity : AppCompatActivity(), MainActivityInterface.View {
         when(item.itemId){
             R.id.sign_out -> {
                 viewModel.signOut()
-                startActivity(Intent(this, StartActivity::class.java))
+                val intent = Intent(this, StartActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
         }
         return true

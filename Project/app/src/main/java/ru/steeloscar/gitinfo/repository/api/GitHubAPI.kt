@@ -7,10 +7,8 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import ru.steeloscar.gitinfo.repository.api.body.AccessTokenBody
-import ru.steeloscar.gitinfo.repository.api.model.AccessToken
-import ru.steeloscar.gitinfo.repository.api.model.RepositoryCommit
-import ru.steeloscar.gitinfo.repository.api.model.UserProfile
-import ru.steeloscar.gitinfo.repository.api.model.UserRepository
+import ru.steeloscar.gitinfo.repository.api.body.UpdateUserProfileBody
+import ru.steeloscar.gitinfo.repository.api.model.*
 
 
 interface GitHubAPI {
@@ -24,11 +22,12 @@ interface GitHubAPI {
             .build()
             .create(GitHubAPI::class.java)
 
-        fun getInstance(): GitHubAPI = gitHubAPI
+        fun getAPI(): GitHubAPI = gitHubAPI
     }
 
-    @POST("/login/oauth/access_token")
+    @POST
     fun getAccessToken(
+        @Url url: String,
         @Header("Accept") applicationType: String,
         @Body body: AccessTokenBody
     ): Observable<AccessToken>
@@ -68,6 +67,12 @@ interface GitHubAPI {
     @GET("/users/{login}")
     fun getUserInfo(
         @Path("login") login: String,
+        @Header("Authorization") accessToken: String
+    ): Observable<UserProfile>
+
+    @PATCH("/user")
+    fun updateProfile(
+        @Body userData: UpdateUserProfileBody,
         @Header("Authorization") accessToken: String
     ): Observable<UserProfile>
 }

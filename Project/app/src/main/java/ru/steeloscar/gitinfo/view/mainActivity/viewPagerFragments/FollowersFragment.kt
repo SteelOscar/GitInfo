@@ -1,4 +1,4 @@
-package ru.steeloscar.gitinfo.view.mainActivity.mainFragments
+package ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,13 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import ru.steeloscar.gitinfo.R
-import ru.steeloscar.gitinfo.interfaces.fragmentsInterface.FollowersInterface
 import ru.steeloscar.gitinfo.databinding.FragmentFollowersBinding
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
 import ru.steeloscar.gitinfo.repository.api.model.UserProfile
 import ru.steeloscar.gitinfo.view.mainActivity.adapters.FollowRecyclerAdapter
-import ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.FollowersViewModel
+import ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.FollowersViewModel
 
-class FollowersFragment: Fragment(), FollowersInterface.View {
+class FollowersFragment: Fragment(), MainActivityViewInterface.Followers {
 
     private lateinit var binding: FragmentFollowersBinding
     private val followersViewModel = FollowersViewModel.getInstance(this)

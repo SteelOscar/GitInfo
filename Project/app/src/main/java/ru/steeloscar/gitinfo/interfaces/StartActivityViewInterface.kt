@@ -7,7 +7,7 @@ import io.reactivex.Completable
 import io.reactivex.Observable
 import ru.steeloscar.gitinfo.repository.api.model.AccessToken
 
-interface StartActivityInterface {
+interface StartActivityViewInterface {
 
     interface View {
         fun showToast(message: String)
@@ -17,14 +17,8 @@ interface StartActivityInterface {
 
     interface ViewModel {
         fun authorizeUser()
+        fun registerUser()
         fun onResume(uri: Uri?)
         fun onDestroy()
     }
-
-    interface Repository {
-        fun getAuthorizeUri(username: String?): Uri
-        fun getTokenAPI(authenticateCode: String): Observable<AccessToken>
-        fun setTokenSharedPreferences(token: String): Completable
-    }
-
 }

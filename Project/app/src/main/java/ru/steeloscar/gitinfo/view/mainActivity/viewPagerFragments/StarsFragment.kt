@@ -1,4 +1,4 @@
-package ru.steeloscar.gitinfo.view.mainActivity.mainFragments
+package ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,13 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import ru.steeloscar.gitinfo.R
-import ru.steeloscar.gitinfo.interfaces.fragmentsInterface.StarsInterface
 import ru.steeloscar.gitinfo.databinding.FragmentStarsBinding
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
 import ru.steeloscar.gitinfo.repository.api.model.UserRepository
 import ru.steeloscar.gitinfo.view.mainActivity.adapters.StarsRecyclerAdapter
-import ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.StarsViewModel
+import ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.StarsViewModel
 
-class StarsFragment: Fragment(), StarsInterface.View {
+class StarsFragment: Fragment(), MainActivityViewInterface.Stars {
 
     private lateinit var binding: FragmentStarsBinding
     private val starsViewModel = StarsViewModel.getInstance(this)

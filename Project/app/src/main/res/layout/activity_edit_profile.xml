@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="ru.steeloscar.gitinfo.viewModel.EditProfileViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/edit_profile_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?android:attr/actionBarSize"
+                    android:theme="@style/Toolbar" />
+
+                <ImageView
+                    android:id="@+id/ic_github"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/git_icon"/>
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/appbar"
+            isRefreshingSwipeRefreshLayout="@{viewModel.visibilityProgressBar}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="28sp"
+                    android:text="@string/edit"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lite_gray"
+                    android:layout_marginBottom="5dp"/>
+
+                <EditText
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="17sp"
+                    android:hint="@string/nameHint"
+                    android:text="@={viewModel.userName}" />
+
+                <EditText
+                    android:id="@+id/user_blog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="17sp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_public_white_20dp"
+                    android:drawableStart="@drawable/ic_public_white_20dp"
+                    android:hint="@string/blogHint"
+                    android:text="@={viewModel.userBlog}"/>
+
+                <EditText
+                    android:id="@+id/user_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="17sp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_people_white_20dp"
+                    android:drawableStart="@drawable/ic_people_white_20dp"
+                    android:hint="@string/companyHint"
+                    android:text="@={viewModel.userCompany}"/>
+
+                <EditText
+                    android:id="@+id/user_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="17sp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_location_on_white_20dp"
+                    android:drawableStart="@drawable/ic_location_on_white_20dp"
+                    android:hint="@string/locationHint"
+                    android:text="@={viewModel.userLocation}"/>
+
+                <EditText
+                    android:id="@+id/user_bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="5dp"
+                    android:hint="@string/bioHint"
+                    android:text="@={viewModel.userBio}"/>
+
+            </LinearLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+</layout>

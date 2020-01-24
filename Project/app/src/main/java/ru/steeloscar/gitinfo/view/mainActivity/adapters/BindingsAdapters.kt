@@ -2,9 +2,7 @@ package ru.steeloscar.gitinfo.view.mainActivity.adapters
 
 import android.content.Intent
 import android.net.Uri
-import android.text.TextWatcher
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -16,15 +14,6 @@ import com.google.android.material.tabs.TabLayout
 import ru.steeloscar.gitinfo.R
 
 /*
-Start Activity Binding Adapters
- */
-
-@BindingAdapter("textListener")
-fun EditText.setTextListener(textWatcher: TextWatcher){
-    this.addTextChangedListener(textWatcher)
-}
-
-/*
 Main Activity Binding Adapters
  */
 
@@ -32,7 +21,6 @@ Main Activity Binding Adapters
 fun TabLayout.setViewPager(viewPager: ViewPager) {
     setupWithViewPager(viewPager)
 }
-
 
 /*
 CommitRecyclerView Binding Adapters
@@ -90,15 +78,15 @@ fun setOverviewImageUrl(view: ImageView, url: String?) {
     }
 }
 
-@BindingAdapter("android:text")
-fun TextView.formatBlogStyle(text: String?) {
+@BindingAdapter("textBlog")
+fun formatBlogStyle(view: TextView, text: String?) {
     if (!text.isNullOrEmpty()) {
-        setText(text)
-        if (text.startsWith("https://")) {
-            setTextColor(ContextCompat.getColor(context, R.color.blue_web_reference))
-            setOnClickListener {
+        view.text = text
+        if (text.startsWith("https://") or text.startsWith("http://")) {
+            view.setTextColor(ContextCompat.getColor(view.context, R.color.blue_web_reference))
+            view.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(text))
-                ContextCompat.startActivity(context, intent, null)
+                ContextCompat.startActivity(view.context, intent, null)
             }
         }
     }
@@ -110,12 +98,6 @@ fun SwipeRefreshLayout.isRefreshing(isLoading: Boolean) {
     setProgressBackgroundColorSchemeResource(R.color.white)
     isRefreshing = isLoading
 }
-
-//@BindingAdapter("twoFactorAuth")
-//fun TextView.setTwoFactorAuth(status: Boolean) {
-//    text =
-//}
-
 
 /*
 Repositories Fragment Binding Adapters

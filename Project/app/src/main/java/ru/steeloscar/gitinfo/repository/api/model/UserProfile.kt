@@ -1,5 +1,7 @@
 package ru.steeloscar.gitinfo.repository.api.model
 
+import ru.steeloscar.gitinfo.repository.api.body.UpdateUserProfileBody
+
 data class UserProfile(
     var login: String?,
     var id: Int?,
@@ -62,6 +64,16 @@ data class UserProfile(
 
     companion object {
         var overviewUserProfile: UserProfile? = null
+        fun getUpdateUserProfile() =
+            UpdateUserProfileBody(
+                overviewUserProfile?.name,
+                overviewUserProfile?.email,
+                overviewUserProfile?.blog,
+                overviewUserProfile?.company,
+                overviewUserProfile?.location,
+                overviewUserProfile?.hireable,
+                overviewUserProfile?.bio
+            )
     }
 
 }

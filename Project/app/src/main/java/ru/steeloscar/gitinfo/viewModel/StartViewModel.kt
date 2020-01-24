@@ -11,13 +11,14 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import ru.steeloscar.gitinfo.BuildConfig
-import ru.steeloscar.gitinfo.interfaces.StartActivityInterface
-import ru.steeloscar.gitinfo.repository.StartRepository
+import ru.steeloscar.gitinfo.interfaces.StartActivityViewInterface
 import ru.steeloscar.gitinfo.repository.GitInfoPreferences
+import ru.steeloscar.gitinfo.repository.Repository
 
-class StartViewModel(private val startActivityInterface: StartActivityInterface.View): StartActivityInterface.ViewModel, BaseObservable() {
+class StartViewModel(private val startActivityInterface: StartActivityViewInterface.View): StartActivityViewInterface.ViewModel, BaseObservable() {
 
-    private var login: String? = null
+    var login: String? = null
+        @Bindable get
 
     var progressVisibility = false
         @Bindable get
@@ -32,8 +33,8 @@ class StartViewModel(private val startActivityInterface: StartActivityInterface.
             notifyPropertyChanged(BR.startActivityVisibility)
         }
 
-    private val repository = StartRepository(startActivityInterface.getSharedPreferences())
-    private val disposables = CompositeDisposable()
+    private var repository: Repository
+    private val startDisposables = CompositeDisposable()
 
     init {
         GitInfoPreferences(startActivityInterface.getSharedPreferences())
@@ -42,17 +43,23 @@ class StartViewModel(private val startActivityInterface: StartActivityInterface.
         } else {
             startActivityVisibility = true
         }
+        repository = Repository.newInstance(startActivityInterface.getSharedPreferences())
     }
 
     override fun authorizeUser() {
-        if (GitInfoPreferences.getToken().isNullOrBlank()) {
+        if (!login.isNullOrBlank()) {
             progressVisibility = true
             GitInfoPreferences.setLogin(login = login)
             val intent = Intent(Intent.ACTION_VIEW, repository.getAuthorizeUri(GitInfoPreferences.getLogin()))
             startActivityInterface.startIntent(intent)
         } else {
-            startActivityInterface.showToast("${GitInfoPreferences.getLogin()} is logged. ${GitInfoPreferences.getToken()}")
+            startActivityInterface.showToast("login")
         }
+    }
+
+    override fun registerUser() {
+        val intent = Intent(Intent.ACTION_VIEW, repository.getRegisterUri())
+        startActivityInterface.startIntent(intent)
     }
 
     override fun onResume(uri: Uri?) {
@@ -60,38 +67,35 @@ class StartViewModel(private val startActivityInterface: StartActivityInterface.
             progressVisibility = true
             val authenticateCode = uri?.getQueryParameter("code")
 
-            disposables.add(repository.getTokenAPI(authenticateCode.toString())
+            startDisposables.add(repository.getTokenAPI(authenticateCode.toString())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ response ->
                     GitInfoPreferences.setToken(token = response.access_token)
+                    repository.updateTokenValue()
                     repository.setTokenSharedPreferences(token = response.access_token)
                     startActivityInterface.startIntent(null)
-                }, { error ->
-                    startActivityInterface.showToast(error.toString())
+                    progressVisibility = false
+                }, {
+                    startActivityInterface.showToast("token")
+                    progressVisibility = false
                 })
             )
+        } else {
+            progressVisibility = false
         }
     }
 
     override fun onDestroy() {
-        disposables.clear()
+        startDisposables.clear()
     }
 
-    @Bindable
-    fun getLoginTextWatcher(): TextWatcher {
-        return object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                //Do nothing
-            }
+    companion object{
+        private var instance: StartViewModel? = null
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                //Do nothing
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                login = s.toString()
-            }
+        fun getInstance(startActivityInterface: StartActivityViewInterface.View): StartViewModel {
+            if (instance == null) instance = StartViewModel(startActivityInterface)
+            return instance as StartViewModel
         }
     }
 }

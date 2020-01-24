@@ -1,4 +1,4 @@
-package ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel
+package ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -6,12 +6,12 @@ import androidx.databinding.library.baseAdapters.BR
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import ru.steeloscar.gitinfo.interfaces.fragmentsInterface.RepositoriesInterface
-import ru.steeloscar.gitinfo.repository.MainRepository
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
+import ru.steeloscar.gitinfo.repository.Repository
 import ru.steeloscar.gitinfo.repository.api.model.UserRepository
 import ru.steeloscar.gitinfo.view.mainActivity.adapters.RepositoriesRecyclerAdapter
 
-class RepositoriesViewModel private constructor(private val fragmentInterface: RepositoriesInterface.View): RepositoriesInterface.ViewModel, BaseObservable() {
+class RepositoriesViewModel private constructor(private val fragmentInterface: MainActivityViewInterface.Repositories): BaseObservable() {
 
     private var count = 0
 
@@ -43,10 +43,10 @@ class RepositoriesViewModel private constructor(private val fragmentInterface: R
             notifyPropertyChanged(BR.visibilityEmptyFormRepositories)
         }
 
-    private val repository = MainRepository.getInstance()
+    private val repository = Repository.getInstance()
     private val disposable = CompositeDisposable()
 
-    override fun getRepositories(){
+    fun getRepositories(){
         disposable.add(repository.gerRepositories()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -56,7 +56,6 @@ class RepositoriesViewModel private constructor(private val fragmentInterface: R
                         userRepository.visibilityProgressCommits = true
                         userRepository.commitsEmpty = true
                     }
-//                    fragmentInterface.setUserRepositories(it)
                     getCommits(it)
                     false
                 } else {
@@ -73,8 +72,6 @@ class RepositoriesViewModel private constructor(private val fragmentInterface: R
             })
         )
     }
-
-
 
     private fun getCommits(arrayListRepositories: ArrayList<UserRepository>) {
         arrayListRepositories.map { userRepository ->
@@ -109,7 +106,7 @@ class RepositoriesViewModel private constructor(private val fragmentInterface: R
         }
     }
 
-    override fun onDestroy() {
+    fun onDestroy() {
         disposable.clear()
     }
 
@@ -117,7 +114,7 @@ class RepositoriesViewModel private constructor(private val fragmentInterface: R
         private var instance: RepositoriesViewModel? = null
         var firstInstance = true
 
-        fun getInstance(fragmentInterface: RepositoriesInterface.View): RepositoriesViewModel =
+        fun getInstance(fragmentInterface: MainActivityViewInterface.Repositories): RepositoriesViewModel =
             if (instance == null) {
                 instance = RepositoriesViewModel(fragmentInterface)
                 instance as RepositoriesViewModel

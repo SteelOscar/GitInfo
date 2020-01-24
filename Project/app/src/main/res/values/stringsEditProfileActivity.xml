@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="edit">Profile Editor</string>
+    <string name="done">Done</string>
+    <string name="nameHint">Name</string>
+    <string name="emailHint">Email</string>
+    <string name="blogHint">Blog</string>
+    <string name="companyHint">Company</string>
+    <string name="locationHint">Location</string>
+    <string name="bioHint">Biography</string>
+    <string name="failed_update">Failed update!\nCheck your internet connection.</string>
+</resources>

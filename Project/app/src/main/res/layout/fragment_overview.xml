@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.OverviewViewModel" />
+            type="ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.OverviewViewModel" />
 
         <variable
             name="userProfile"
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/gray"
-        tools:context=".view.mainActivity.mainFragments.OverviewFragment">
+        tools:context=".view.mainActivity.viewPagerFragments.OverviewFragment">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_overview"
@@ -132,7 +132,7 @@
                                         android:drawableLeft="@drawable/ic_public_white_20dp"
                                         android:drawableStart="@drawable/ic_public_white_20dp"
                                         android:visibility="@{userProfile.blog == null ? View.GONE : View.VISIBLE}"
-                                        android:text="@{userProfile.blog}"/>
+                                        textBlog="@{userProfile.blog}"/>
 
                                     <TextView
                                         android:id="@+id/user_company"

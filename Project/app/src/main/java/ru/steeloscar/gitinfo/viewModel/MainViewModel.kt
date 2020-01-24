@@ -1,14 +1,14 @@
 package ru.steeloscar.gitinfo.viewModel
 
-import ru.steeloscar.gitinfo.interfaces.MainActivityInterface
-import ru.steeloscar.gitinfo.repository.MainRepository
-import ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.*
+import ru.steeloscar.gitinfo.repository.GitInfoPreferences
+import ru.steeloscar.gitinfo.repository.Repository
+import ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.*
 
-class MainViewModel(activityInterface: MainActivityInterface.View): MainActivityInterface.ViewModel {
+class MainViewModel{
+    private val repository = Repository.getInstance()
 
-    private val repository = MainRepository.newInstance(activityInterface.getSharedPreferences())
-
-    override fun signOut() {
+    fun signOut() {
+        GitInfoPreferences.setToken(null)
         repository.setTokenSharedPreferences("")
         OverviewViewModel.clearData()
         RepositoriesViewModel.clearData()

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="button_login">Войти</string>
-    <string name="edit_login">Логин</string>
+    <string name="button_login">Sign in</string>
+    <string name="edit_login">Login</string>
     <string name="powered">powered by GitHub API</string>
+    <string name="register">I don\'t have an account</string>
+    <string name="error_login">Enter login</string>
 </resources>

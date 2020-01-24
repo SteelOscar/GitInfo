@@ -1,4 +1,4 @@
-package ru.steeloscar.gitinfo.view.mainActivity.mainFragments
+package ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,14 +9,14 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import ru.steeloscar.gitinfo.R
-import ru.steeloscar.gitinfo.interfaces.fragmentsInterface.OverviewInterface
 import ru.steeloscar.gitinfo.databinding.FragmentOverviewBinding
+import ru.steeloscar.gitinfo.interfaces.MainActivityViewInterface
 import ru.steeloscar.gitinfo.repository.api.model.UserProfile
-import ru.steeloscar.gitinfo.viewModel.mainFragmentsViewModel.OverviewViewModel
+import ru.steeloscar.gitinfo.viewModel.viewPagerFragmentsViewModel.OverviewViewModel
 
-class OverviewFragment: Fragment(), OverviewInterface.View {
+class OverviewFragment: Fragment(), MainActivityViewInterface.Overview {
 
-    private val overviewViewModel = OverviewViewModel.getInstance(this)
+    private val overviewViewModel = OverviewViewModel.newInstance(this)
     private lateinit var binding: FragmentOverviewBinding
 
     override fun onCreateView(
@@ -47,7 +47,6 @@ class OverviewFragment: Fragment(), OverviewInterface.View {
     }
 
     override fun setUserProfile(userProfile: UserProfile) {
-        UserProfile.overviewUserProfile = userProfile
         binding.userProfile = userProfile
     }
 

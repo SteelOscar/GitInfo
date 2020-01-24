@@ -9,8 +9,8 @@ import ru.steeloscar.gitinfo.databinding.FollowRecyclerAdapterLayoutBinding
 import ru.steeloscar.gitinfo.databinding.FragmentFollowersBindingImpl
 import ru.steeloscar.gitinfo.databinding.FragmentFollowingBindingImpl
 import ru.steeloscar.gitinfo.repository.api.model.UserProfile
-import ru.steeloscar.gitinfo.view.mainActivity.mainFragments.FollowersFragment
-import ru.steeloscar.gitinfo.view.mainActivity.mainFragments.FollowingFragment
+import ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments.FollowersFragment
+import ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments.FollowingFragment
 
 class FollowRecyclerAdapter private constructor(): RecyclerView.Adapter<FollowRecyclerAdapter.ViewHolder>() {
 
