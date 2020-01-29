@@ -1,6 +1,5 @@
 package ru.steeloscar.gitinfo.view.mainActivity.adapters
 
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -28,8 +27,4 @@ class MainViewPagerAdapter(fm: FragmentManager, behavior: Int) : FragmentPagerAd
     override fun getCount(): Int = fragmentList.size
 
     override fun getPageTitle(position: Int): CharSequence? = titleFragmentList[position]
-
-//    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-//        //Do nothing so that ViewPager don't destroy fragments instance
-//    }
 }

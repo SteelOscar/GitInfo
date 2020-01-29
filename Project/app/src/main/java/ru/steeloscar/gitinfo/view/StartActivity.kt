@@ -20,8 +20,10 @@ class StartActivity : AppCompatActivity(), StartActivityViewInterface.View {
     private val APP_PREFERENCES = "sharedPreferences"
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.StartTheme)
         super.onCreate(savedInstanceState)
         viewModel = StartViewModel.getInstance(this)
+        viewModel.checkToken()
         val binding = DataBindingUtil.setContentView<ActivityStartBinding>(this, R.layout.activity_start)
         binding.viewModel = viewModel
     }

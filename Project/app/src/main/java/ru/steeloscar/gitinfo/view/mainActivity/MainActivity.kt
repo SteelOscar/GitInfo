@@ -55,10 +55,6 @@ class MainActivity : AppCompatActivity(), MainActivityViewInterface.MainView {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    override fun startIntent(intent: Intent?) {
-        startActivity(intent)
-    }
-
     override fun getSharedPreferences(): SharedPreferences =
         getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
 

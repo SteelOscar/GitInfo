@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/gray</item>
         <item name="colorPrimaryDark">@color/gray</item>
         <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="StartTheme.Launcher" parent="StartTheme">
         <item name="android:windowBackground">@drawable/splash_layout</item>
     </style>
 

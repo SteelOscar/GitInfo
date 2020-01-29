@@ -14,8 +14,7 @@
             android:theme="@style/MainTheme"/>
         <activity
             android:name=".view.StartActivity"
-            android:noHistory="true"
-            android:theme="@style/StartTheme">
+            android:theme="@style/StartTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

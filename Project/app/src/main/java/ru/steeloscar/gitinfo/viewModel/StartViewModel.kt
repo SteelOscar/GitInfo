@@ -2,8 +2,6 @@ package ru.steeloscar.gitinfo.viewModel
 
 import android.content.Intent
 import android.net.Uri
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import androidx.databinding.library.baseAdapters.BR
@@ -38,12 +36,16 @@ class StartViewModel(private val startActivityInterface: StartActivityViewInterf
 
     init {
         GitInfoPreferences(startActivityInterface.getSharedPreferences())
+        repository = Repository.newInstance(startActivityInterface.getSharedPreferences())
+    }
+
+    fun checkToken(){
         if (GitInfoPreferences.getToken() != null) {
             startActivityInterface.startIntent(null)
+            instance = null
         } else {
             startActivityVisibility = true
         }
-        repository = Repository.newInstance(startActivityInterface.getSharedPreferences())
     }
 
     override fun authorizeUser() {

@@ -9,7 +9,6 @@ interface MainActivityViewInterface {
 
     interface MainView {
         fun showToast(message: String)
-        fun startIntent(intent: Intent?)
         fun getSharedPreferences(): SharedPreferences
     }
 

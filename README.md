@@ -4,7 +4,7 @@ API 15 and higher.
 * ViewPager;
 * Fragments;
 * RecyclerView;
-* RxJava2;
+* Retrofit2 + RxJava2 + GSON;
 * GitHub API.
 ## Screenshots:
 <p align="center">

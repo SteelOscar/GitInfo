@@ -75,7 +75,7 @@ class Repository(sharedPreferences: SharedPreferences) {
         private var instance: Repository? = null
 
         fun newInstance(sharedPreferences: SharedPreferences): Repository {
-            instance = Repository(sharedPreferences)
+            if (instance == null) instance = Repository(sharedPreferences)
             return instance as Repository
         }
 
