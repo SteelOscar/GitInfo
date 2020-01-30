@@ -52,4 +52,13 @@ class FollowingFragment: Fragment(), MainActivityViewInterface.Following {
     override fun setRecyclerViewFollowingUsers(followingUsers: ArrayList<UserProfile>) {
         (binding.recyclerView.adapter as FollowRecyclerAdapter).setUserProfiles(followingUsers)
     }
+
+    companion object {
+        private var instance: FollowingFragment? = null
+
+        fun getInstance(): FollowingFragment{
+            if (instance == null) instance = FollowingFragment()
+            return instance as FollowingFragment
+        }
+    }
 }

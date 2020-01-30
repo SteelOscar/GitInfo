@@ -52,4 +52,13 @@ class RepositoriesFragment: Fragment(), MainActivityViewInterface.Repositories{
         (binding.recyclerView.adapter as RepositoriesRecyclerAdapter)
             .setUserRepositories(userRepositories)
     }
+
+    companion object {
+        private var instance: RepositoriesFragment? = null
+
+        fun getInstance(): RepositoriesFragment{
+            if (instance == null) instance = RepositoriesFragment()
+            return instance as RepositoriesFragment
+        }
+    }
 }

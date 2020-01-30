@@ -3,17 +3,16 @@ package ru.steeloscar.gitinfo.view.mainActivity.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments.*
 
 class MainViewPagerAdapter(fm: FragmentManager, behavior: Int) : FragmentPagerAdapter(fm, behavior) {
 
-    private val fragmentList = arrayOf(
-        OverviewFragment(),
-        RepositoriesFragment(),
-        StarsFragment(),
-        FollowersFragment(),
-        FollowingFragment()
-    )
+    private var fragmentList = ArrayList<Fragment>()
+
+    fun addFragment(fragments: ArrayList<Fragment>){
+        fragmentList = fragments
+        notifyDataSetChanged()
+    }
+
     private val titleFragmentList = arrayOf(
         "Overview",
         "Repositories",

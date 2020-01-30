@@ -25,16 +25,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a993831f-3cca-4c36-80f6-35e83367ad0b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/interfaces/MainActivityViewInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/interfaces/MainActivityViewInterface.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/repository/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/repository/Repository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/StartActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/StartActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/ru/steeloscar/gitinfo/ExampleInstrumentedTest.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/MainViewPagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/MainViewPagerAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/StartViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/StartViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowersFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowersFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowingFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/OverviewFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/OverviewFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/RepositoriesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/RepositoriesFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/StarsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/StarsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/ru/steeloscar/gitinfo/ExampleUnitTest.kt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +74,7 @@
     <favorites_list name="GitInfo" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -122,16 +124,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/interfaces/fragmentsInterface/FollowingInterface.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/interfaces/BaseFragmentView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/BaseFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/RepositoriesFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/StarsFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowersFragment.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowingFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/repository/api/body/UserUpdateProfile.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/repository/api/body/UpdateUserProfileBody.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/stringsEditProfileAcitivity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/viewPagerFragmentsViewModel/FollowersViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/viewPagerFragmentsViewModel/StarsViewModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/OverviewFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/edit_toolbar_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/follow_recycler_adapter_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/viewPagerFragmentsViewModel/OverviewViewModel.kt" />
@@ -140,7 +137,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/repository/api/GitHubAPI.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/BindingsAdapters.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/stringStartActivity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/EditProfileViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/interfaces/EditProfileActivityViewInterface.kt" />
@@ -156,9 +152,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/StartViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/viewPagerFragmentsViewModel/FollowingViewModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/StartActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/RepositoriesFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/OverviewFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/StarsFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowersFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowingFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/BindingsAdapters.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/MainViewPagerAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/StartActivity.kt" />
       </list>
     </option>
   </component>
@@ -174,48 +176,59 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="interfaces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
@@ -223,7 +236,7 @@
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
@@ -232,14 +245,23 @@
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="mainActivity" type="462c0819:PsiDirectoryNode" />
+              <item name="viewPagerFragments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="viewModel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitInfo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="Project-app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="gitinfo" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="viewModel" type="462c0819:PsiDirectoryNode" />
@@ -249,9 +271,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,7 +284,7 @@
     <property name="android.recentlyUsedThemes" value="Theme.AppCompat.DayNight.DarkActionBar" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../AndroidSDK" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GitInfo-master/Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
@@ -299,10 +318,63 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android App.Project-app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Project-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Project-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -411,7 +483,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49787235" visible="true" weight="0.2639676" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49787235" visible="true" weight="0.26882592" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.50212765" side_tool="true" weight="0.2736842" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -419,15 +491,15 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49959514" weight="0.41030195" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49959514" weight="0.5275311" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.4582593" />
-      <window_info anchor="bottom" id="TODO" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="TODO" order="2" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.3676732" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50040483" side_tool="true" weight="0.74955595" />
-      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.3285968" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4979757" weight="0.3090586" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.32827735" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.6234458" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.3268206" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -473,20 +545,7 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/kapt/debug/ru/steeloscar/gitinfo/DataBinderMapperImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/kapt/debug/ru/steeloscar/gitinfo/databinding/ActivityEditProfileBindingImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-307">
-          <caret line="267" column="30" selection-start-line="267" selection-start-column="30" selection-end-line="267" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/kapt/debug/ru/steeloscar/gitinfo/databinding/ActivityEditProfileBindingImpl.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -554,13 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
           <caret line="112" column="22" lean-forward="true" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/RepositoriesFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="17" column="78" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
         </state>
       </provider>
     </entry>
@@ -707,26 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/viewPagerFragmentsViewModel/OverviewViewModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="e#69#442#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/OverviewFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="e#1711#1752#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/interfaces/MainActivityViewInterface.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -742,31 +774,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../AndroidSDK/sources/android-29/android/content/Intent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-688">
-          <caret line="5890" column="28" selection-start-line="5890" selection-start-column="28" selection-end-line="5890" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AndroidSDK/sources/android-29/android/content/Intent.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/viewPagerFragmentsViewModel/FollowingViewModel.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowingFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
@@ -780,27 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/kapt/debug/ru/steeloscar/gitinfo/databinding/CommitsRecyclerViewLayoutBindingImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="208" selection-start-line="208" selection-end-line="208" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/BindingsAdapters.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/StarsFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/viewPagerFragmentsViewModel/StarsViewModel.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-298">
@@ -811,27 +809,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/repository/Repository.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="64" column="66" lean-forward="true" selection-start-line="64" selection-start-column="66" selection-end-line="64" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/MainViewPagerAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding>
-            <element signature="e#58#258#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,6 +827,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/viewModel/viewPagerFragmentsViewModel/OverviewViewModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="e#69#442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/RepositoriesFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/OverviewFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/StarsFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowersFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/viewPagerFragments/FollowingFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/kapt/debug/ru/steeloscar/gitinfo/databinding/CommitsRecyclerViewLayoutBindingImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="208" selection-start-line="208" selection-end-line="208" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/BindingsAdapters.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/adapters/MainViewPagerAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#58#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/steeloscar/gitinfo/view/mainActivity/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
         </state>
       </provider>
     </entry>

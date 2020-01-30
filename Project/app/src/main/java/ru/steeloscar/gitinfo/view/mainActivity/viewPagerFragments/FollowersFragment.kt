@@ -50,4 +50,13 @@ class FollowersFragment: Fragment(), MainActivityViewInterface.Followers {
     override fun setRecyclerViewUserProfiles(userProfiles: ArrayList<UserProfile>) {
         (binding.recyclerView.adapter as FollowRecyclerAdapter).setUserProfiles(userProfiles)
     }
+
+    companion object {
+        private var instance: FollowersFragment? = null
+
+        fun getInstance(): FollowersFragment{
+            if (instance == null) instance = FollowersFragment()
+            return instance as FollowersFragment
+        }
+    }
 }

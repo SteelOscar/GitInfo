@@ -17,6 +17,7 @@ import ru.steeloscar.gitinfo.databinding.ActivityMainBinding
 import ru.steeloscar.gitinfo.view.EditProfileActivity
 import ru.steeloscar.gitinfo.view.StartActivity
 import ru.steeloscar.gitinfo.view.mainActivity.adapters.MainViewPagerAdapter
+import ru.steeloscar.gitinfo.view.mainActivity.viewPagerFragments.*
 import ru.steeloscar.gitinfo.viewModel.MainViewModel
 
 class MainActivity : AppCompatActivity(), MainActivityViewInterface.MainView {
@@ -44,6 +45,14 @@ class MainActivity : AppCompatActivity(), MainActivityViewInterface.MainView {
                 supportFragmentManager,
                 FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
             )
+        val fragmentList = arrayListOf(
+            OverviewFragment.getInstance(),
+            RepositoriesFragment.getInstance(),
+            StarsFragment.getInstance(),
+            FollowersFragment.getInstance(),
+            FollowingFragment.getInstance()
+        )
+        (binding.viewpager.adapter as MainViewPagerAdapter).addFragment(fragmentList)
         binding.viewModel = viewModel
         binding.icGithub.setOnLongClickListener {
             Toast.makeText(this, resources.getString(R.string.git_hub), Toast.LENGTH_SHORT).show()

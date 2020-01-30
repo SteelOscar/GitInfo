@@ -51,4 +51,13 @@ class StarsFragment: Fragment(), MainActivityViewInterface.Stars {
     override fun setUserStars(userStars: ArrayList<UserRepository>) {
         (binding.recyclerView.adapter as StarsRecyclerAdapter).setUserStars(userStars)
     }
+
+    companion object {
+        private var instance: StarsFragment? = null
+
+        fun getInstance(): StarsFragment{
+            if (instance == null) instance = StarsFragment()
+            return instance as StarsFragment
+        }
+    }
 }

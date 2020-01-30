@@ -53,4 +53,13 @@ class OverviewFragment: Fragment(), MainActivityViewInterface.Overview {
     override fun startIntent(intent: Intent) {
         startActivity(intent)
     }
+
+    companion object {
+        private var instance: OverviewFragment? = null
+
+        fun getInstance(): OverviewFragment{
+            if (instance == null) instance = OverviewFragment()
+            return instance as OverviewFragment
+        }
+    }
 }
